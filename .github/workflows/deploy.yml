@@ -26,13 +26,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: yarn
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: corepack yarn install --immutable
 
       - name: Build project
-        run: yarn build
+        run: corepack yarn build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
