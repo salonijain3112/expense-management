@@ -33,10 +33,12 @@ const RAW_RUNTIME_STATE =
           ["@types/gh-pages", "npm:6.1.0"],\
           ["@types/react", "npm:19.2.14"],\
           ["@types/react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.3"],\
+          ["@types/react-router-dom", "npm:5.3.3"],\
           ["expense-management", "workspace:."],\
           ["gh-pages", "npm:6.3.0"],\
           ["react", "npm:19.2.4"],\
           ["react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.4"],\
+          ["react-router-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:7.14.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
@@ -418,6 +420,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/history", [\
+      ["npm:4.7.11", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/@types-history-npm-4.7.11-fe05d7b2e1-10c0.zip/node_modules/@types/history/",\
+        "packageDependencies": [\
+          ["@types/history", "npm:4.7.11"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/react", [\
       ["npm:19.2.14", {\
         "packageLocation": "../../../../../.yarn/berry/cache/@types-react-npm-19.2.14-072ed0943f-10c0.zip/node_modules/@types/react/",\
@@ -444,6 +455,29 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@types/react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/react-router", [\
+      ["npm:5.1.20", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/@types-react-router-npm-5.1.20-620ccce99a-10c0.zip/node_modules/@types/react-router/",\
+        "packageDependencies": [\
+          ["@types/history", "npm:4.7.11"],\
+          ["@types/react", "npm:19.2.14"],\
+          ["@types/react-router", "npm:5.1.20"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/react-router-dom", [\
+      ["npm:5.3.3", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/@types-react-router-dom-npm-5.3.3-9f687b5b3a-10c0.zip/node_modules/@types/react-router-dom/",\
+        "packageDependencies": [\
+          ["@types/history", "npm:4.7.11"],\
+          ["@types/react", "npm:19.2.14"],\
+          ["@types/react-router", "npm:5.1.20"],\
+          ["@types/react-router-dom", "npm:5.3.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -490,6 +524,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../.yarn/berry/cache/commondir-npm-1.0.1-291b790340-10c0.zip/node_modules/commondir/",\
         "packageDependencies": [\
           ["commondir", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["cookie", [\
+      ["npm:1.1.1", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/cookie-npm-1.1.1-881103ddeb-10c0.zip/node_modules/cookie/",\
+        "packageDependencies": [\
+          ["cookie", "npm:1.1.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -559,10 +602,12 @@ const RAW_RUNTIME_STATE =
           ["@types/gh-pages", "npm:6.1.0"],\
           ["@types/react", "npm:19.2.14"],\
           ["@types/react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.3"],\
+          ["@types/react-router-dom", "npm:5.3.3"],\
           ["expense-management", "workspace:."],\
           ["gh-pages", "npm:6.3.0"],\
           ["react", "npm:19.2.4"],\
           ["react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.4"],\
+          ["react-router-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:7.14.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
@@ -930,6 +975,61 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-router", [\
+      ["npm:7.14.0", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/react-router-npm-7.14.0-b1d3823786-10c0.zip/node_modules/react-router/",\
+        "packageDependencies": [\
+          ["react-router", "npm:7.14.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:377241677e367c154ebd8f79adda3b2db7a2840924b40a54339646ec325847aa6901328e0421241d8af29498c17b8b5b47725d449ff2a92dc1505fb7e7337708#npm:7.14.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-router-virtual-693cfa0e1d/6/.yarn/berry/cache/react-router-npm-7.14.0-b1d3823786-10c0.zip/node_modules/react-router/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.14"],\
+          ["@types/react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.3"],\
+          ["cookie", "npm:1.1.1"],\
+          ["react", "npm:19.2.4"],\
+          ["react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.4"],\
+          ["react-router", "virtual:377241677e367c154ebd8f79adda3b2db7a2840924b40a54339646ec325847aa6901328e0421241d8af29498c17b8b5b47725d449ff2a92dc1505fb7e7337708#npm:7.14.0"],\
+          ["set-cookie-parser", "npm:2.7.2"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-router-dom", [\
+      ["npm:7.14.0", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/react-router-dom-npm-7.14.0-7ef8d06d58-10c0.zip/node_modules/react-router-dom/",\
+        "packageDependencies": [\
+          ["react-router-dom", "npm:7.14.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:7.14.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-router-dom-virtual-377241677e/6/.yarn/berry/cache/react-router-dom-npm-7.14.0-7ef8d06d58-10c0.zip/node_modules/react-router-dom/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.14"],\
+          ["@types/react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.3"],\
+          ["react", "npm:19.2.4"],\
+          ["react-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:19.2.4"],\
+          ["react-router", "virtual:377241677e367c154ebd8f79adda3b2db7a2840924b40a54339646ec325847aa6901328e0421241d8af29498c17b8b5b47725d449ff2a92dc1505fb7e7337708#npm:7.14.0"],\
+          ["react-router-dom", "virtual:043e0c1313f61086ed91264eb5bea37ea8b6e30e2b49182be387aefc5d7f3c575d9ac87bac52da7fd5a051323f34276a812fa9e4fc6356b120d30ab75378cbcf#npm:7.14.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["reusify", [\
       ["npm:1.1.0", {\
         "packageLocation": "../../../../../.yarn/berry/cache/reusify-npm-1.1.0-96242be57f-10c0.zip/node_modules/reusify/",\
@@ -963,6 +1063,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../../../.yarn/berry/cache/semver-npm-6.3.1-bcba31fdbe-10c0.zip/node_modules/semver/",\
         "packageDependencies": [\
           ["semver", "npm:6.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["set-cookie-parser", [\
+      ["npm:2.7.2", {\
+        "packageLocation": "../../../../../.yarn/berry/cache/set-cookie-parser-npm-2.7.2-e1a4d1221b-10c0.zip/node_modules/set-cookie-parser/",\
+        "packageDependencies": [\
+          ["set-cookie-parser", "npm:2.7.2"]\
         ],\
         "linkType": "HARD"\
       }]\

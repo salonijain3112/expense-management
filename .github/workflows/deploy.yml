@@ -1,4 +1,4 @@
-name: Deploy React App (GitHub Pages)
+name: Deploy React App to GitHub Pages
 
 on:
   push:
@@ -12,11 +12,15 @@ permissions:
 
 jobs:
   build:
+    name: Build React App
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Debug ref
+        run: echo "Triggered by $GITHUB_REF"
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -24,52 +28,56 @@ jobs:
           node-version: 18
           cache: yarn
 
-      - name: Install deps
-        run: yarn install
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-      - name: Build
+      - name: Build project
         run: yarn build
 
-      - name: Upload build
+      - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build
+          name: build   # 👈 MUST match download step
           path: build
+          retention-days: 1
 
   deploy-dev:
+    name: Deploy to DEV (GitHub Pages /dev)
     if: github.ref == 'refs/heads/develop'
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download build
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: build
           path: build
 
-      - name: Deploy to DEV (/dev)
+      - name: Deploy to gh-pages (dev folder)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          destination_dir: dev   # 👈 THIS is the trick
+          destination_dir: dev   # 👈 dev goes here
           publish_branch: gh-pages
+          keep_files: true       # 👈 preserves prod files
 
   deploy-prod:
+    name: Deploy to PROD (GitHub Pages root)
     if: startsWith(github.ref, 'refs/tags/v')
     needs: build
     runs-on: ubuntu-latest
-    environment: prod   # 👈 manual approval gate
+    environment: prod   # 👈 enables manual approval
 
     steps:
-      - name: Download build
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: build
           path: build
 
-      - name: Deploy to PROD (/)
+      - name: Deploy to gh-pages (root)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
