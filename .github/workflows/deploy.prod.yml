@@ -35,11 +35,13 @@ jobs:
         run: corepack yarn install --immutable
 
       - name: Build project
+        env:
+          BUILD_TARGET: prod
         run: corepack yarn build
 
       - name: Deploy to gh-pages (root)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist/prod
           publish_branch: gh-pages

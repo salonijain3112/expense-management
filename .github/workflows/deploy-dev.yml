@@ -32,13 +32,15 @@ jobs:
         run: corepack yarn install --immutable
 
       - name: Build project
+        env:
+          BUILD_TARGET: dev
         run: corepack yarn build
 
       - name: Deploy to gh-pages (dev folder)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist/dev
           destination_dir: dev
           publish_branch: gh-pages
           keep_files: true
