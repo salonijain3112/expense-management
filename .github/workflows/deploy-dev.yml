@@ -14,7 +14,7 @@ jobs:
 
     environment:
       name: dev
-      url: https://<your-username>.github.io/<repo>/dev/
+      url: https://salonijain3112.github.io/expense-management/dev/
 
     steps:
       - name: Checkout code
