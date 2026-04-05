@@ -1,0 +1,42 @@
+name: Deploy to DEV (GitHub Pages)
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: dev
+      url: https://<your-username>.github.io/<repo>/dev/
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        run: yarn build
+
+      - name: Deploy to gh-pages (dev folder)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          destination_dir: dev
+          publish_branch: gh-pages
+          keep_files: true
